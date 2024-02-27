@@ -14,18 +14,18 @@
     const imageUrl = encodeURIComponent("https://img.perceptpixel.com/percept-jwgwjskw/kitty.jpg");
 
     function shareOnFacebook() {
-        const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=https://65de0d07334cc4063264a43a--starlit-kleicha-c578e9.netlify.app/share?image=${imageUrl}`;
+        const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=https://imagesharing-36b6fefd0f81.herokuapp.com/share?image=${imageUrl}`;
         window.open(shareUrl, '_blank');
     }
 
     function shareOnTwitter() {
         const text = encodeURIComponent("Check out this image!");
-        const shareUrl = `https://twitter.com/intent/tweet?url=https://65de0d07334cc4063264a43a--starlit-kleicha-c578e9.netlify.app/share?image=${imageUrl}&text=${text}`;
+        const shareUrl = `https://twitter.com/intent/tweet?url=https://imagesharing-36b6fefd0f81.herokuapp.com//share?image=${imageUrl}&text=${text}`;
         window.open(shareUrl, '_blank');
     }
 
     function shareOnWhatsApp() {
-        const text = encodeURIComponent("Check out this image! https://65de0d07334cc4063264a43a--starlit-kleicha-c578e9.netlify.app/share?image=" + imageUrl);
+        const text = encodeURIComponent("Check out this image! https://imagesharing-36b6fefd0f81.herokuapp.com/share?image=" + imageUrl);
         const shareUrl = `https://wa.me/?text=${text}`;
         window.open(shareUrl, '_blank');
     }
