@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Image Share</title>
+    <script>
+        // Function to get query parameters by name
+        function getQueryParam(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+        // Dynamically set the Open Graph and Twitter Card meta tags
+        const imageUrl = getQueryParam('image');
+        document.write(`<meta property="og:type" content="website">`);
+        document.write(`<meta property="og:url" content="${document.location.href}">`);
+        document.write(`<meta property="og:title" content="Amazing Image">`);
+        document.write(`<meta property="og:description" content="A captivating description of the image content.">`);
+        document.write(`<meta property="og:image" content="${imageUrl}">`);
+
+        document.write(`<meta name="twitter:card" content="summary_large_image">`);
+        document.write(`<meta name="twitter:url" content="${document.location.href}">`);
+        document.write(`<meta name="twitter:title" content="Amazing Image">`);
+        document.write(`<meta name="twitter:description" content="A captivating description of the image content.">`);
+        document.write(`<meta name="twitter:image" content="${imageUrl}">`);
+    </script>
+</head>
+<body>
+<h1>View This Image</h1>
+<img src="" id="dynamicImage" alt="Dynamic Image">
+
+<script>
+    // Set the image source to the URL parameter
+    document.getElementById('dynamicImage').src = getQueryParam('image');
+</script>
+</body>
+</html>
